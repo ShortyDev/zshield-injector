@@ -10,14 +10,6 @@ public class EncryptionResponseVisitor extends ClassVisitor {
         super(Opcodes.ASM5, classWriter);
         System.out.println(PREFIX + "Preparing number replacements to increment special packet limits...");
     }
-    
-    public int get() {
-        return 2048;
-    }
-    
-    public int get2() {
-        return get() - 2000;
-    }
 
     @Override
     public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
@@ -82,5 +74,4 @@ public class EncryptionResponseVisitor extends ClassVisitor {
             return targetWriter.visitAnnotation(desc, visible);
         }
     }
-
 }
